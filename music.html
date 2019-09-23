@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="mystyle.css">
+<title>Musical keyboard</title>
+<style>
+</style>
+</head>
+<body onload="focusInput()" id="background1">
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+	<table align="right">
+		<tr><td><h1 style="text-shadow: 2px 3px yellow">MUSICAL KEYBOARD</h1></td></tr>
+		<tr>
+	<td><input  id="ib" type="text" placeholder="Enter the musical key" onkeypress="playBeat(event)"></td>
+</tr>
+</table>
+	<audio id="a1">
+		<source src="beat1.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="a2">
+		<source src="beat2.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="a3">
+		<source src="pop.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="a4">
+		<source src="xx.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="a5">
+		<source src="poppy1.mp3" type="audio/mpeg">
+		</audio>
+		<script>
+			function focusInput(){
+				document.getElementById("ib").focus();
+			}
+			function playBeat(event){
+				console.log(event.key);
+				if(event.key == '.'){
+					//play discodisco
+					document.getElementById("background1").style.backgroundColor="red";
+					var first=document.getElementById("a1");
+					first.pause();
+					first.currentTime=0;
+					first.play();
+					return;
+				}
+				else if(event.key =='/'){
+				document.getElementById("background1").style.backgroundColor="blue";
+				var second=document.getElementById("a2");
+				second.pause();
+					second.currentTime= 0;
+				second.play();
+
+				return;
+			}
+				else if(event.key ==':'){
+				document.getElementById("background1").style.backgroundColor="pink";
+				var third=document.getElementById("a3");
+				third.pause();
+					third.currentTime= 0;
+				third.play();
+
+				return;
+			}
+			else if(event.key ==' '){
+				document.getElementById("background1").style.backgroundColor="blue";
+				var fourth=document.getElementById("a4");
+				fourth.pause();
+					fourth.currentTime= 0;
+				fourth.play();
+
+				return;
+			}
+			else{
+				document.getElementById("background1").style.backgroundColor="green";
+				var fifth=document.getElementById("a5");
+				fifth.pause();
+					fifth.currentTime= 0;
+				fifth.play();
+
+				return;
+			}
+			}
+			</script>
+</body>
+</html>
